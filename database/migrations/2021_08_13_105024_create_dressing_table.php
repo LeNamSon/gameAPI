@@ -13,7 +13,7 @@ class CreateDressingTable extends Migration
      */
     public function up()
     {
-        Schema::create('dressing', function (Blueprint $table) {
+        Schema::create('dressings', function (Blueprint $table) {
         // public byte gender = 0;
         // public byte hairStyle = 3;
         // public byte hairColor = 7;
@@ -55,6 +55,6 @@ class CreateDressingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dressing');
+        Schema::dropIfExists('dressings');
     }
 }

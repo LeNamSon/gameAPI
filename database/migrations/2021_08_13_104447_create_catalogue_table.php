@@ -13,7 +13,7 @@ class CreateCatalogueTable extends Migration
      */
     public function up()
     {
-        Schema::create('catalogue', function (Blueprint $table) {
+        Schema::create('catalogues', function (Blueprint $table) {
         // public string gameID;
         // public uint ranking;
         // public uint win;
@@ -38,6 +38,6 @@ class CreateCatalogueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogue');
+        Schema::dropIfExists('catalogues');
     }
 }

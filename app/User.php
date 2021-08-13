@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function catalogue(){
+        return $this->hasMany('App\Api\Catalogue');
+    }
+
+    public function dressing(){
+        return $this->hasMany('App\Api\Dressing');
+    }
 }
