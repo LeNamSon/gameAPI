@@ -22,8 +22,10 @@ class Dressing extends Model
         'feetColor'
     ];
 
+    protected $hidden = ['created_at','updated_at'];
+
 
     public function userDressings() {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 }

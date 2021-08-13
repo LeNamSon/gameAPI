@@ -5,18 +5,20 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Api\Catalogue;
+use App\Api\Dressing;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+    protected $table = 'Users';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','gender','coin'
     ];
 
     /**
@@ -25,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'created_at','updated_at'
     ];
 
     /**
@@ -37,11 +39,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function catalogue(){
-        return $this->hasMany('App\Api\Catalogue');
+    public function catalogues(){
+        return $this->hasMany(Catalogue::class);
     }
 
-    public function dressing(){
-        return $this->hasMany('App\Api\Dressing');
+    public function dressings(){
+        return $this->hasMany(Dressing::class);
     }
 }

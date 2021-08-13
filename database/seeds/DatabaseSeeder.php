@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         // factory(App\Api\Catalogue::class,100)->create();
 
-        factory(App\Api\Dressing::class,300)->create();
+        factory(App\Api\Dressing::class,500)->create();
 
         
 

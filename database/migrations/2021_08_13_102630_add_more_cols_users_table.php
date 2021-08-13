@@ -14,8 +14,8 @@ class AddMoreColsUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedTinyInteger('gender')->default(0)->after('remember_token');
-            $table->unsignedInteger('coin')->default(0)->after('gender'); 
+            $table->unsignedTinyInteger('gender')->after('remember_token');
+            $table->unsignedInteger('coin')->after('gender'); 
         });
     }
 
