@@ -127,11 +127,17 @@ class apiUserController extends Controller
 
     public function getDress(User $user, $id){
        
-        // $dressings = User::find($id)->dressings;        
-        $dressing = $user::find($id)->dressings;        
-
+        // $dressings = User::find($id)->dressings; 
+        $player = $user::find($id);
+        $dressing = $user::find($id)->dressings;   
+        $numDress = $dressing->count();
+        $result = new Collection([
+            "Player" => $player,
+            "TotalDress" =>$numDress,
+            "Dressings" => $dressing
+        ]);
         // dd($dressing);
-        return response()->json($dressing, 200);
+        return response()->json($result, 200);
     }
 
     public function getAllDressing(User $user){
