@@ -11,7 +11,7 @@ use App\Api\Dressing;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $table = 'Users';
+    // protected $table = 'Users';
     /**
      * The attributes that are mass assignable.
      *

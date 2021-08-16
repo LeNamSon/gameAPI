@@ -19,15 +19,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Users
-route::get('users','api\apiUserController@getAll');
-route::get('users/{id}','api\apiUserController@show');
-route::post('users','api\apiUserController@create');
-route::put('users/{id}','api\apiUserController@update');
-route::get('users/{id}/catalogue','api\apiUserController@getCatalogue');
-route::get('userscata','api\apiUserController@getAllCatalogue');
-route::get('users/{id}/dressing','api\apiUserController@getDress');
-route::get('usersdress','api\apiUserController@getAllDressing');
-route::get('usersfull/{id}','api\apiUserController@getFull');
+route::get('users','Api\apiUserController@getAll');
+route::get('users/{id}','Api\apiUserController@show');
+route::post('users','Api\apiUserController@create');
+route::put('users/{id}','Api\apiUserController@update');
+route::get('users/{id}/catalogue','Api\apiUserController@getCatalogue');
+route::get('users/{id}/dressing','Api\apiUserController@getDress');
+route::get('userfull/{id}','Api\apiUserController@getFull');
+route::get('usersdress','Api\apiUserController@getAllDressing');
+route::get('userscata','Api\apiUserController@getAllCatalogue');
+route::get('usersfull','Api\apiUserController@getFulls');
 
 //Catalogues
 

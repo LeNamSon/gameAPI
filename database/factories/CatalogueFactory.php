@@ -11,6 +11,6 @@ $factory->define(App\Api\Catalogue::class, function (Faker $faker) {
         'ranking' => mt_rand(1,10),
         'win'=>mt_rand(1,12000),
         'lose'=>mt_rand(1,10000),
-        'user_id'=>mt_rand(1,30)
+        'user_id'=>mt_rand(1,1000)
     ];
 });

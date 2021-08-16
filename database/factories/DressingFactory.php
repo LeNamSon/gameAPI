@@ -20,7 +20,7 @@ $factory->define(Dressing::class, function (Faker $faker) {
         'legColor'=>mt_rand(1,50),
         'feetStyle'=>mt_rand(1,50),
         'feetColor'=>mt_rand(1,50),
-        'user_id'=>mt_rand(1,30)
+        'user_id'=>mt_rand(1,1000)
 
     ];
 });
