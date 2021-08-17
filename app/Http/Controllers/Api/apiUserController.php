@@ -139,7 +139,7 @@ class apiUserController extends Controller
         $dressing = Dressing::create($requestArr);
     
 
-        return response()->json(['message'=> "Catalogue of {$user->name}  addedly"], 201);
+        return response()->json(['message'=> "Dressing of {$user->name}  addedly"], 201);
     }
 
 
@@ -236,8 +236,10 @@ class apiUserController extends Controller
 
     }
     
-    public function deleteUserCatalogue($id, $game_id){
+    public function deleteUserCatalogue(Request $request, $id, $game_id){
         $catalogue = Catalogue::find($game_id);
+        $user = User::find($id);
+       
 
         if(!$catalogue){
             return response()->json(['message' =>" Can not find catalogue"], 404);
@@ -245,10 +247,20 @@ class apiUserController extends Controller
 
         $catalogue->delete();
 
-        return response()->json(['message'=>"Catalogue of {$user->name} deleted successfully"], 204);
+        return response()->json(['message'=>"Catalogue of {$user->name} deleted successfully"], 202);
     }
     
     public function deleteUserDressing($id, $dressing_id){
+        $dressing = Dressing::find($dressing_id);
+        $user = User::find($id);
+
+        if(!$dressing){
+            return response()->json(['message' =>" Can not find dressing"], 404);
+        }
+
+        $dressing->delete();
+
+        return response()->json(['message'=>"Dressing of {$user->name} deleted successfully"], 204);
     
     }
 
