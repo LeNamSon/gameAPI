@@ -46,6 +46,9 @@ route::get('users/full','Api\apiUserController@getUsersFull');
 // GET: api/user/{id}
 route::get('user/{id}', 'Api\apiUserController@getUser');
 
+//GET user by name
+route::get('user/find/{$name}', 'Api\apiUserController@getUserName');
+
 // GET: api/user/{id}/dressing 
 route::get('user/{id}/dressing', 'Api\apiUserController@getUserDressing');
 
@@ -55,7 +58,7 @@ route::get('user/{id}/catalogue', 'Api\apiUserController@getUserCatalogue');
 // GET:api/user/{id}/full
 route::get('user/{id}/full', 'Api\apiUserController@getUserFull');
 
-//POST method
+
 // POST: api/user
 route::post('user','Api\apiUserController@createUser');
 
@@ -67,17 +70,23 @@ route::post('user/{id}/dressing','Api\apiUserController@createDressing');
 
 // PUT method
 // PUT:api/user/{id}
+route::put('user/{id}','Api\apiUserController@editUser');
 
 // PUT:api/user/{id}/catalogue/{cat_id}
+route::put('user/{id}/catalogue/{game_id}','Api\apiUserController@editUserCat');
 
 // PUT:api/user/{id}/dressing/{dressing_id}
+route::put('user/{id}/dressing/{dress_id}','Api\apiUserController@editUserDress');
 
 // DELETE method
 // DELETE:api/user/{id}
+route::delete('user/{id}','Api\apiUserController@deleteUser');
 
 // DELETE:api/user/{id}/catalogue/{cat_id}
+route::delete('user/{id}/catalogue/{game_id}','Api\apiUserController@deleteUserCatalogue');
 
 // DELETE:api/user/{id}/dressing/{dressing_id}
+route::delete('user/{id}/dressing/{dress_id}','Api\apiUserController@deleteUserDressing');
 
 
 

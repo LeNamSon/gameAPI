@@ -19,7 +19,7 @@ class CreateCatalogueTable extends Migration
         // public uint win;
         // public uint lose;
 
-            $table->id('gameID');
+            $table->id();
             $table->unsignedInteger('ranking')->nullable();
             $table->unsignedInteger('win')->nullable();
             $table->unsignedInteger('lose')->nullable();

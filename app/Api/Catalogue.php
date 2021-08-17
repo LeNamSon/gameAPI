@@ -14,4 +14,10 @@ class Catalogue extends Model
     public function userCatalogues(){
         return $this -> belongsTo(User::class);
     }
+
+    public function scopefindCat($user_id, $game_id){
+        return $this->Catalogue::where('id', '=', $game_id)
+                ->where('user_id', '=', $user_id)
+        ->get();        
+    }
 }
